@@ -1,0 +1,16 @@
+1) HW1_STORE
+2) Catgories, OrderDetails, Orders, Products, Users
+3) ProductID
+4) int
+5) https://docs.microsoft.com/en-us/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql?view=sql-server-ver15
+6) No 
+7) int can only represent whole numbers. You would need a float or similar data type to store a decimal value.
+8) Three - ben, bob and jane.
+9) Products - Catgories, Products - OrderDetails
+   OrderDetails - Orders, Orders - Users
+
+   To explain, there is a 1 to many relationship with the following tables:
+   Products - OrderDetails
+   Categories - Products
+   Orders - OrderDetails
+   Users - Orders 
