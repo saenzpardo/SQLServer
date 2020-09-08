@@ -51,6 +51,28 @@ FROM GLAccounts LEFT JOIN InvoiceLineItems -- outer join with GLAccounts on left
 	ON GLAccounts.AccountNo = InvoiceLineItems.AccountNo -- using AccountNo as relationship
 WHERE InvoiceLineItems.AccountNo IS NULL; -- if AccountNo is NULL - GLAccount is not used.  
 
-
-
 -- Question 9
+-- table Invoices
+-- columns InvoiceID, Status
+-- Status = Late, Paid or Pending
+-- Late if InvoiceDueDate < 2016-04-30
+-- Paid if value in PaymentDate is NULL
+/*
+Need more work here...something's amiss
+*/
+Select *
+FROM Invoices
+WHERE PaymentDate < '2016-03-01';
+
+SELECT 'Late' AS Status, InvoiceID
+FROM Invoices	
+WHERE PaymentDate <= '2016-04-30'
+UNION
+SELECT 'Paid' AS Status, InvoiceID
+FROM Invoices
+WHERE PaymentDate IS NULL
+UNION 
+SELECT 'Pending' AS Status, InvoiceID
+FROM Invoices
+WHERE PaymentDate > '2016-04-30' 
+	AND PaymentDate IS NOT NULL;
