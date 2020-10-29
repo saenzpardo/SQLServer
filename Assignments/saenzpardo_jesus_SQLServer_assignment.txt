@@ -1,0 +1,60 @@
+/*
+INFO-2800
+Author: J. Adam Saenzpardo
+Date: 10/22/2020
+Assignment 7: Functions
+Purpose: Construct SQL queries using functions 
+
+This one ended up being pretty complex...
+I ended up comparing what I came up with to the answers in the downloadable content to see 
+where I was struggling.  
+*/
+
+--1
+SELECT VendorContactFName + ' ' + LEFT(VendorContactLName, 1) +
+	'.' AS Contact, RIGHT(VendorPhone, 8) AS Phone 
+FROM Vendors
+ORDER BY VendorContactFName, VendorContactLName;
+
+--2
+
+SELECT InvoiceNumber, InvoiceTotal - PaymentTotal - CreditTotal AS 'Balance Due'
+FROM Invoices
+WHERE InvoiceTotal - PaymentTotal - CreditTotal != 0 
+	AND InvoiceDueDate < GETDATE() + 30; 
+
+--3
+SELECT InvoiceNumber, InvoiceTotal - PaymentTotal - CreditTotal AS 'Balance Due'
+FROM Invoices
+WHERE InvoiceTotal - PaymentTotal - CreditTotal != 0 
+	AND InvoiceDueDate < CAST(CAST(YEAR(GETDATE()) AS char(4)) 
+		+ '-' + CAST(MONTH(GETDATE()) + 1 AS char(2)) + 
+		'-01' AS datetime) - 1;
+
+--4
+SELECT
+  CASE
+    WHEN GROUPING(AccountDescription) = 1 THEN '*ALL*'
+    ELSE AccountDescription
+  END AS Account,
+  CASE
+    WHEN GROUPING(VendorState) = 1 THEN '*ALL*'
+    ELSE VendorState
+  END AS State,
+  SUM(InvoiceLineItemAmount) AS LineItemSum
+FROM GLAccounts JOIN InvoiceLineItems 
+  ON GLAccounts.AccountNo = InvoiceLineItems.AccountNo
+ JOIN Invoices
+   ON InvoiceLineItems.InvoiceID =  Invoices.InvoiceID
+ JOIN Vendors
+   ON Invoices.VendorID = Vendors.VendorID
+GROUP BY AccountDescription, VendorState WITH CUBE;
+
+--5
+SELECT InvoiceNumber,
+    InvoiceTotal - CreditTotal - PaymentTotal AS Balance, 
+    RANK() OVER (ORDER BY InvoiceTotal - CreditTotal - 
+        PaymentTotal DESC) As BalanceRank
+FROM Invoices
+WHERE InvoiceTotal - CreditTotal - PaymentTotal > 0 AND
+    InvoiceDueDate < GETDATE() + 30;
