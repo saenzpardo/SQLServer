@@ -1,0 +1,17 @@
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\bin\Debug\LibrarydbApp.exe.config
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\bin\Debug\LibrarydbApp.exe
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\bin\Debug\LibrarydbApp.pdb
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.csprojAssemblyReference.cache
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.mainMenuFrm.resources
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.Properties.Resources.resources
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.csproj.GenerateResource.cache
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.csproj.CoreCompileInputs.cache
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.exe
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.pdb
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.inventoryFrm.resources
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.searchInventoryFrm.resources
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.adminFrm.resources
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.addProductFrm.resources
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.checkoutFrm.resources
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.returnFrm.resources
+C:\Users\saenz\source\repos\LibrarydbApp\LibrarydbApp\obj\Debug\LibrarydbApp.customerSearchFrm.resources
